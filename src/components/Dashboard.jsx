@@ -1,5 +1,3 @@
-// src/components/Dashboard.jsx
-
 import React, { useState } from 'react';
 import MovieCard from './MovieCard';
 import { useNavigate } from 'react-router-dom';
@@ -31,10 +29,15 @@ const Dashboard = () => {
     // Add more movie objects as needed
   ]);
 
+  const handleAddMovie = () => {
+    navigate('/add-movie'); // Replace '/add-movie' with the actual route for the "Add Movie" form page
+  };
+
   return (
     <div className="dashboard">
       <header className="dashboard-header">
         <h1>Movie Collection</h1>
+        <button onClick={handleAddMovie}>Add Movie</button>
       </header>
       <div className="movie-list">
         {movies.map((movie) => (
